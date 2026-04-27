@@ -1,0 +1,7 @@
+config.py
+contacts.json
+memory.json
+user_config.json
+.env
+__pycache__/
+*.pyc
