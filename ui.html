@@ -419,9 +419,21 @@
 
   function startBlue() {
     document.getElementById('startScreen').style.display = 'none';
+    
+    const intros = [
+      "Hello Boss! I'm Blue, your personal AI assistant. How can I help you today?",
+      "Blue online, Boss. Ready to assist. What do you need?",
+      "Hey Boss! Blue here. What are we working on today?",
+      "Good to meet you Boss! I'm Blue. Ask me anything.",
+      "Blue activated, Boss. All systems ready. How can I help?",
+      "Boss! Blue reporting for duty. What's the plan today?",
+    ];
+    
+    const intro = intros[Math.floor(Math.random() * intros.length)];
+    
     setTimeout(() => {
-      speakResponse("Hello Boss! I'm Blue, your personal AI assistant. How can I help you today?");
-      showResponse("Hello Boss! I'm Blue, your personal AI assistant. How can I help you today?");
+      speakResponse(intro);
+      showResponse(intro);
     }, 500);
   }
 
@@ -439,8 +451,7 @@
     }, 500);
   }
 
-  speechSynthesis.onvoiceschanged = () => playIntro();
-  playIntro();
+  speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
 </script>
 </body>
 </html>
